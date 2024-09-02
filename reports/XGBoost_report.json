@@ -1,0 +1,15 @@
+{
+    "accuracy": 0.9335106382978723,
+    "confusion_matrix": [
+        [
+            226,
+            7
+        ],
+        [
+            18,
+            125
+        ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.93      0.97      0.95       233\n           1       0.95      0.87      0.91       143\n\n    accuracy                           0.93       376\n   macro avg       0.94      0.92      0.93       376\nweighted avg       0.93      0.93      0.93       376\n",
+    "feature_importance": {
+        "Age": 
