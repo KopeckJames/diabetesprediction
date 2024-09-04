@@ -1,0 +1,52 @@
+{
+    "accuracy": 0.925531914893617,
+    "confusion_matrix": [
+        [
+            223,
+            10
+        ],
+        [
+            18,
+            125
+        ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.93      0.96      0.94       233\n           1       0.93      0.87      0.90       143\n\n    accuracy                           0.93       376\n   macro avg       0.93      0.92      0.92       376\nweighted avg       0.93      0.93      0.93       376\n",
+    "feature_importance": {
+        "Age": 0.0,
+        "Gender": 0.0,
+        "Ethnicity": 0.0,
+        "SocioeconomicStatus": 0.02,
+        "BMI": 0.06,
+        "Smoking": 0.02,
+        "DietQuality": 0.06,
+        "FamilyHistoryDiabetes": 0.0,
+        "GestationalDiabetes": 0.0,
+        "PolycysticOvarySyndrome": 0.0,
+        "PreviousPreDiabetes": 0.02,
+        "Hypertension": 0.04,
+        "SystolicBP": 0.06,
+        "DiastolicBP": 0.0,
+        "FastingBloodSugar": 0.18,
+        "HbA1c": 0.1,
+        "SerumCreatinine": 0.02,
+        "BUNLevels": 0.06,
+        "CholesterolTotal": 0.04,
+        "CholesterolLDL": 0.0,
+        "CholesterolHDL": 0.04,
+        "CholesterolTriglycerides": 0.02,
+        "AntihypertensiveMedications": 0.0,
+        "Statins": 0.0,
+        "AntidiabeticMedications": 0.0,
+        "FrequentUrination": 0.04,
+        "ExcessiveThirst": 0.04,
+        "UnexplainedWeightLoss": 0.02,
+        "FatigueLevels": 0.06,
+        "BlurredVision": 0.02,
+        "TinglingHandsFeet": 0.0,
+        "QualityOfLifeScore": 0.04,
+        "HeavyMetalsExposure": 0.0,
+        "WaterQuality": 0.0,
+        "MedicationAdherence": 0.0,
+        "HealthLiteracy": 0.04
+    }
+}
