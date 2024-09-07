@@ -1,0 +1,14 @@
+{
+    "accuracy": 0.9441489361702128,
+    "confusion_matrix": [
+        [
+            226,
+            7
+        ],
+        [
+            14,
+            129
+        ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.94      0.97      0.96       233\n           1       0.95      0.90      0.92       143\n\n    accuracy                           0.94       376\n   macro avg       0.95      0.94      0.94       376\nweighted avg       0.94      0.94      0.94       376\n"
+}

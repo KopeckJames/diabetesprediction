@@ -1,0 +1,52 @@
+{
+    "accuracy": 0.9308510638297872,
+    "confusion_matrix": [
+        [
+            227,
+            6
+        ],
+        [
+            20,
+            123
+        ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.92      0.97      0.95       233\n           1       0.95      0.86      0.90       143\n\n    accuracy                           0.93       376\n   macro avg       0.94      0.92      0.93       376\nweighted avg       0.93      0.93      0.93       376\n",
+    "feature_importance": {
+        "Age": 0.0026720800179723427,
+        "Gender": 6.327283015337043e-05,
+        "Ethnicity": 0.00031161876376865525,
+        "SocioeconomicStatus": 0.0007092901159240525,
+        "BMI": 0.006774956273919039,
+        "Smoking": 0.0003516712479021323,
+        "DietQuality": 0.007231356609076225,
+        "FamilyHistoryDiabetes": 0.0,
+        "GestationalDiabetes": 0.0,
+        "PolycysticOvarySyndrome": 5.696603258931862e-05,
+        "PreviousPreDiabetes": 0.0,
+        "Hypertension": 0.04325663527508754,
+        "SystolicBP": 0.003611320092651876,
+        "DiastolicBP": 0.004351547793745987,
+        "FastingBloodSugar": 0.3692916154276909,
+        "HbA1c": 0.42377746062167754,
+        "SerumCreatinine": 0.004443018712835073,
+        "BUNLevels": 0.002944787778313969,
+        "CholesterolTotal": 0.0040105813564818675,
+        "CholesterolLDL": 0.004456462855937774,
+        "CholesterolHDL": 0.0013643094365938962,
+        "CholesterolTriglycerides": 0.007896322048600479,
+        "AntihypertensiveMedications": 0.00022533384126603018,
+        "Statins": 0.0,
+        "AntidiabeticMedications": 0.00014173464609559046,
+        "FrequentUrination": 0.04748368691730311,
+        "ExcessiveThirst": 0.01954270352344568,
+        "UnexplainedWeightLoss": 0.011254603352551065,
+        "FatigueLevels": 0.011980545498902071,
+        "BlurredVision": 0.0007065852128413087,
+        "TinglingHandsFeet": 0.00021092679562895034,
+        "QualityOfLifeScore": 0.008838745993243755,
+        "HeavyMetalsExposure": 0.0,
+        "WaterQuality": 0.0,
+        "MedicationAdherence": 0.006908339914397559,
+        "HealthLiteracy": 0.005131521013402673
+    }
+}

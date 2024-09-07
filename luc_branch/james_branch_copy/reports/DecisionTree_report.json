@@ -1,0 +1,52 @@
+{
+    "accuracy": 0.8776595744680851,
+    "confusion_matrix": [
+        [
+            213,
+            20
+        ],
+        [
+            26,
+            117
+        ]
+    ],
+    "classification_report": "              precision    recall  f1-score   support\n\n           0       0.89      0.91      0.90       233\n           1       0.85      0.82      0.84       143\n\n    accuracy                           0.88       376\n   macro avg       0.87      0.87      0.87       376\nweighted avg       0.88      0.88      0.88       376\n",
+    "feature_importance": {
+        "Age": 0.011456631933862855,
+        "Gender": 0.0,
+        "Ethnicity": 0.0091123142152024,
+        "SocioeconomicStatus": 0.0,
+        "BMI": 0.008231188263581789,
+        "Smoking": 0.0,
+        "DietQuality": 0.009943905153154438,
+        "FamilyHistoryDiabetes": 0.0,
+        "GestationalDiabetes": 0.0,
+        "PolycysticOvarySyndrome": 0.0,
+        "PreviousPreDiabetes": 0.0,
+        "Hypertension": 0.044981402474280174,
+        "SystolicBP": 0.004656444595456597,
+        "DiastolicBP": 0.011295713647272675,
+        "FastingBloodSugar": 0.2871001377952662,
+        "HbA1c": 0.38259498754604726,
+        "SerumCreatinine": 0.010462063047079027,
+        "BUNLevels": 0.01851377815977394,
+        "CholesterolTotal": 0.0037073972099876105,
+        "CholesterolLDL": 0.00527586507850905,
+        "CholesterolHDL": 0.0035561867214023127,
+        "CholesterolTriglycerides": 0.014158009171579071,
+        "AntihypertensiveMedications": 0.0,
+        "Statins": 0.0020704532680927033,
+        "AntidiabeticMedications": 0.0,
+        "FrequentUrination": 0.039581224877977515,
+        "ExcessiveThirst": 0.044191497115535036,
+        "UnexplainedWeightLoss": 0.030680550848330875,
+        "FatigueLevels": 0.009204043130489042,
+        "BlurredVision": 0.0,
+        "TinglingHandsFeet": 0.0,
+        "QualityOfLifeScore": 0.02220733542014389,
+        "HeavyMetalsExposure": 0.0,
+        "WaterQuality": 0.0,
+        "MedicationAdherence": 0.01414599664495129,
+        "HealthLiteracy": 0.012872873682024201
+    }
+}
