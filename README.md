@@ -84,8 +84,6 @@ In this project, we tested various machine learning models to predict diabetes. 
 
 
 
-
-
 # Project Requirements
 
 ## Data Model Implementation (25 points)
