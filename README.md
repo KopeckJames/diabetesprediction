@@ -8,7 +8,8 @@
 - Aaliyah  
 - Ryan  
 - James
-
+#Deployed Huggingface Model Link
+https://huggingface.co/spaces/kopeck/diabetespredictiontool​
 
 
 # Diabetes Health Dataset
