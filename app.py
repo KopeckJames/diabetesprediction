@@ -112,15 +112,16 @@ def create_random_patient():
         'HealthLiteracy': random.randint(0, 10)
     }
 def create_feature_importance_plot(model, feature_names):
+    plt.figure(figsize=(10, 6))
     importance = model.feature_importances_
     feature_importance = pd.DataFrame({'feature': feature_names, 'importance': importance})
     feature_importance = feature_importance.sort_values('importance', ascending=False).head(10)
-    
-    plt.figure(figsize=(10, 6))
     sns.barplot(x='importance', y='feature', data=feature_importance)
     plt.title('Top 10 Feature Importances')
     plt.tight_layout()
-    return plt
+    fig = plt.gcf()
+    plt.close()
+    return fig
 
 def create_prediction_probability_plot(probabilities):
     plt.figure(figsize=(8, 4))
@@ -128,12 +129,39 @@ def create_prediction_probability_plot(probabilities):
     plt.title('Prediction Probability')
     plt.ylim(0, 1)
     plt.tight_layout()
-    return plt
+    fig = plt.gcf()
+    plt.close()
+    return fig
+
+def create_confusion_matrix_plot(y_true, y_pred):
+    plt.figure(figsize=(8, 6))
+    cm = confusion_matrix(y_true, y_pred)
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.title('Confusion Matrix')
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    fig = plt.gcf()
+    plt.close()
+    return fig
 
 def predict_diabetes(*args):
     # Convert inputs to the format expected by your model
     inputs = list(args)
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+
+    class_report = classification_report(y_test, y_pred, output_dict=True)
     
+    # Create confusion matrix
+    cm = confusion_matrix(y_test, y_pred)
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.title('Confusion Matrix')
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    confusion_matrix_plot = plt
+
+
     # Convert categorical variables to numerical
     inputs[1] = 0 if inputs[1] == "Male" else 1  # Gender
     inputs[2] = ["Caucasian", "African American", "Asian", "Hispanic"].index(inputs[2])  # Ethnicity
@@ -158,7 +186,10 @@ def predict_diabetes(*args):
     feature_importance_fig = create_feature_importance_plot(model, X.columns)
     prediction_probability_fig = create_prediction_probability_plot(prediction_proba)
     
-    return prediction, feature_importance_fig, prediction_probability_fig
+    return (prediction, feature_importance_fig, prediction_probability_fig,f"Accuracy: {accuracy:.2f}",
+    pd.DataFrame(class_report).transpose().to_html(),
+    confusion_matrix_plot)
+
 
 my_theme = gr.Theme.from_hub("ParityError/Interstellar")
 def create_improved_interface():
@@ -239,6 +270,14 @@ def create_improved_interface():
                 feature_importance_plot = gr.Plot(label="Top 10 Feature Importances")
             with gr.Column():
                 prediction_probability_plot = gr.Plot(label="Prediction Probability")
+        with gr.Row():
+                accuracy_score = gr.Textbox(label="Model Accuracy")
+        
+        with gr.Row():
+            classification_report = gr.HTML(label="Classification Report")
+        
+        with gr.Row():
+            confusion_matrix_plot = gr.Plot(label="Confusion Matrix")
         
         gr.Markdown("## Disclaimer")
         gr.Markdown("This tool is for informational purposes only and should not be considered medical advice. Please consult with a healthcare professional for proper diagnosis and treatment.")
@@ -280,7 +319,8 @@ def create_improved_interface():
                     frequent_urination, excessive_thirst, unexplained_weight_loss,
                     fatigue_levels, blurred_vision, tingling_hands_feet, quality_of_life, heavy_metals_exposure,
                     water_quality, medication_adherence, health_literacy],
-            outputs=[prediction, feature_importance_plot, prediction_probability_plot]
+                outputs=[prediction, feature_importance_plot, prediction_probability_plot, 
+                     accuracy_score, classification_report, confusion_matrix_plot]
         )
        
     
@@ -289,6 +329,6 @@ def create_improved_interface():
 # Launch the improved interface
 if __name__ == "__main__":
     improved_interface = create_improved_interface()
-    improved_interface.launch(share=True)
+    improved_interface.launch()
 
 
